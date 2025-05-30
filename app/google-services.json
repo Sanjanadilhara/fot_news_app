@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "431190806674",
+    "project_id": "fot-news-app-c9b93",
+    "storage_bucket": "fot-news-app-c9b93.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431190806674:android:8a91b1f12e7c47ed3cd64b",
+        "android_client_info": {
+          "package_name": "com.example.newsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAr_VfTzTwQa5nh3HsSnSI5Hx2K2tUmFN4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
