@@ -8,6 +8,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText userName;
     private EditText password;
     private FrameLayout loginOverlay;
+    private TextView signupLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,14 @@ public class LoginActivity extends AppCompatActivity {
         userName=findViewById(R.id.loginUserName);
         password=findViewById(R.id.loginPassword);
         loginOverlay=findViewById(R.id.loginProgressOverlay);
+        signupLink=findViewById(R.id.signUpTextView);
+
+        signupLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, SignupActivity.class));
+            }
+        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
