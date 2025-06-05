@@ -2,10 +2,15 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.NewsApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <item name="colorPrimary">#1A2A6C</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorSecondary">#1A2A6C</item>
+        <item name="colorPrimary">#94E1FF</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="colorSecondary">#00000000</item>
         <item name="colorOnSecondary">#FFFFFF</item>
-        <item name="color">#FFFFFF</item>
+        <item name="colorTertiary">#AAAAAA</item>
+        <item name="colorOnTertiary">#AAAAAA</item>
+        <item name="backgroundColor">#18171F</item>
+        <item name="colorOnBackground">#FFFFFF</item>
+        <item name="statusBarBackground">#18171F</item>
+        <item name="android:statusBarColor">#18171F</item>
     </style>
 </resources>

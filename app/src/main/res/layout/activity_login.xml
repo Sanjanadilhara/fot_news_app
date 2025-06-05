@@ -5,7 +5,7 @@
     android:id="@+id/login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?attr/backgroundColor"
     android:layout_weight="0.3">
 
     <LinearLayout
@@ -23,7 +23,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#4B4F58"
+                android:textColor="?attr/colorOnTertiary"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:text="Hello" />
@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#1A2A6C"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:text="Again!" />
@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#4B4F58"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="22sp"
                 android:text="Login here" />
 
@@ -56,7 +56,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#4B4F58"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="16sp"
                 android:layout_marginBottom="5dp"
                 android:text="Username" />
@@ -65,6 +65,7 @@
                 android:id="@+id/loginUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/primary_input"
                 android:paddingVertical="11dp"
                 android:layout_marginBottom="20dp"
@@ -75,7 +76,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#4B4F58"
+                android:textColor="?attr/colorOnBackground"
                 android:textSize="16sp"
                 android:layout_marginBottom="5dp"
                 android:text="Password" />
@@ -87,6 +88,7 @@
                 android:background="@drawable/primary_input"
                 android:layout_marginBottom="30dp"
                 android:ems="10"
+                android:textColor="?attr/colorOnSecondary"
                 android:paddingVertical="11dp"
                 android:paddingHorizontal="15dp"
                 android:inputType="textPassword" />
@@ -96,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Login"
-                android:textColor="@color/white"
+                android:textColor="?attr/colorOnPrimary"
                 android:textAllCaps="false"
                 android:background="@drawable/primary_button"
                 />
@@ -110,7 +112,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#4B4F58"
+                    android:textColor="?attr/colorOnBackground"
                     android:textSize="16sp"
                     android:layout_marginBottom="5dp"
                     android:text="don’t have an account ? " />
@@ -119,7 +121,7 @@
                     android:id="@+id/signUpTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#1A2A6C"
+                    android:textColor="?attr/colorPrimary"
                     android:textSize="16sp"
                     android:layout_marginBottom="5dp"
                     android:textStyle="bold"

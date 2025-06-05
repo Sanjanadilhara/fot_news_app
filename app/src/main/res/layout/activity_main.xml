@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="?attr/backgroundColor">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
@@ -14,34 +14,45 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_nav_bar"
+        app:layout_constraintBottom_toTopOf="@+id/nav_bar_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/actionBarcardView"
         app:navGraph="@navigation/nav_graph" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav_bar"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/nav_bar_card"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:background="@color/white"
-        android:elevation="5dp"
-        android:outlineSpotShadowColor="@color/black"
-        app:compatShadowEnabled="true"
-        app:elevation="5dp"
+        app:cardElevation="10dp"
         app:labelVisibilityMode="labeled"
+        app:cardCornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        >
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?attr/backgroundColor"
+        app:itemTextColor="?attr/colorOnBackground"
+        android:outlineSpotShadowColor="@color/black"
+        app:compatShadowEnabled="false"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_nav_menu" />
+    </androidx.cardview.widget.CardView>
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/actionBarcardView"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:orientation="horizontal"
-        android:elevation="600dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="0dp"
+        app:cardBackgroundColor="?attr/backgroundColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -51,22 +62,29 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 android:layout_marginStart="15dp"
-                android:src="@drawable/main_logo_small"/>
+                android:src="@drawable/logo_medium"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginStart="4dp"
                 android:textStyle="bold"
+                android:textColor="?attr/colorOnSecondary"
                 android:layout_weight="1"
                 android:text="FOT News"/>
+
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:layout_marginEnd="20dp"
+                android:paddingHorizontal="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@drawable/transparent_ripple_background"
+                android:scaleType="centerInside"
                 android:src="@drawable/alert_circle" />
 
         </LinearLayout>

@@ -5,7 +5,7 @@
     android:id="@+id/signup"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?attr/backgroundColor"
     android:layout_weight="0.3">
 
     <LinearLayout
@@ -23,7 +23,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#1A2A6C"
+                android:textColor="?attr/colorPrimary"
                 android:textSize="50sp"
                 android:textStyle="bold"
                 android:text="Hello!" />
@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#4B4F58"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="22sp"
                 android:text="Signup to get Started" />
 
@@ -48,15 +48,16 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#4B4F58"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="16sp"
                 android:layout_marginBottom="5dp"
-                android:text="Full name" />
+                android:text="First name" />
 
             <EditText
-                android:id="@+id/signupFullName"
+                android:id="@+id/signupFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/primary_input"
                 android:paddingVertical="11dp"
                 android:layout_marginBottom="20dp"
@@ -67,7 +68,27 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#4B4F58"
+                android:textColor="?attr/colorOnSecondary"
+                android:textSize="16sp"
+                android:layout_marginBottom="5dp"
+                android:text="Last name" />
+
+            <EditText
+                android:id="@+id/signupLastName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSecondary"
+                android:background="@drawable/primary_input"
+                android:paddingVertical="11dp"
+                android:layout_marginBottom="20dp"
+                android:paddingHorizontal="15dp"
+                android:ems="10"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="16sp"
                 android:layout_marginBottom="5dp"
                 android:text="Password" />
@@ -76,6 +97,7 @@
                 android:id="@+id/signupPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/primary_input"
                 android:layout_marginBottom="30dp"
                 android:ems="10"
@@ -86,7 +108,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#4B4F58"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="16sp"
                 android:layout_marginBottom="5dp"
                 android:text="Confirm Password" />
@@ -95,6 +117,7 @@
                 android:id="@+id/signupConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/primary_input"
                 android:layout_marginBottom="30dp"
                 android:ems="10"
@@ -105,7 +128,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#4B4F58"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="16sp"
                 android:layout_marginBottom="5dp"
                 android:text="Email" />
@@ -114,6 +137,7 @@
                 android:id="@+id/signupEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSecondary"
                 android:background="@drawable/primary_input"
                 android:layout_marginBottom="30dp"
                 android:ems="10"
@@ -125,8 +149,8 @@
                 android:id="@+id/signupButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login"
-                android:textColor="@color/white"
+                android:text="Sign In"
+                android:textColor="?attr/colorOnPrimary"
                 android:textAllCaps="false"
                 android:background="@drawable/primary_button"
                 />
@@ -139,7 +163,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#4B4F58"
+                    android:textColor="?attr/colorOnSecondary"
                     android:textSize="16sp"
                     android:layout_marginBottom="5dp"
                     android:text="Already have an account ? " />
@@ -147,7 +171,7 @@
                     android:id="@+id/loginTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#1A2A6C"
+                    android:textColor="?attr/colorPrimary"
                     android:textSize="16sp"
                     android:layout_marginBottom="5dp"
                     android:textStyle="bold"

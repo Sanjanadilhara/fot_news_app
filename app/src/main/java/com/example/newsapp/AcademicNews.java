@@ -38,24 +38,21 @@ public class AcademicNews extends Fragment {
         View view=inflater.inflate(R.layout.fragment_academic_news, container, false);
 
         ArrayList<NewsItem> newsItems = new ArrayList<>();
-        newsItems.add(new NewsItem("Massive solar flare disrupts satellite signals across multiple continents", "2025-05-10 20:10:00", "https://picsum.photos/id/1015/600/400"));
-        newsItems.add(new NewsItem("Local artist unveils a groundbreaking sculpture that redefines modern art in downtown plaza", "2025-05-11 14:30:00", "https://picsum.photos/id/1025/600/400"));
-        newsItems.add(new NewsItem("Tech startup launches AI assistant designed to help senior citizens live independently", "2025-05-12 09:45:00", "https://picsum.photos/id/1035/600/400"));
-        newsItems.add(new NewsItem("Scientists discover a new species of bird deep within the untouched Amazon rainforest", "2025-05-13 08:00:00", "https://picsum.photos/id/1045/600/400"));
-        newsItems.add(new NewsItem("City council unanimously approves ambitious green energy project to power 60% of homes", "2025-05-14 11:15:00", "https://picsum.photos/id/1055/600/400"));
-        newsItems.add(new NewsItem("Breakthrough in cancer research shows promising results in early-stage clinical trials", "2025-05-15 17:50:00", "https://picsum.photos/id/1065/600/400"));
-        newsItems.add(new NewsItem("Spectacular meteor shower to light up the night sky with over 100 visible meteors per hour", "2025-05-16 22:30:00", "https://picsum.photos/id/1075/600/400"));
-        newsItems.add(new NewsItem("Renovated historic library reopens, offering digitized archives and community learning spaces", "2025-05-17 10:00:00", "https://picsum.photos/id/22/600/400"));
-        newsItems.add(new NewsItem("Global cyberattack targets major tech firm, compromising millions of user accounts", "2025-05-18 19:25:00", "https://picsum.photos/id/4/600/400"));
-        newsItems.add(new NewsItem("Local school robotics team wins national competition with autonomous search-and-rescue robot", "2025-05-19 13:40:00", "https://picsum.photos/id/5/600/400"));
-        newsItems.add(new NewsItem("New climate report warns of accelerated sea level rise and extreme weather by 2030", "2025-05-20 07:55:00", "https://picsum.photos/id/6/600/400"));
-        newsItems.add(new NewsItem("International film festival showcases award-winning entries from over 40 countries", "2025-05-21 21:10:00", "https://picsum.photos/id/7/600/400"));
-        newsItems.add(new NewsItem("Farmers across the Midwest celebrate bountiful harvest after months of heavy rainfall", "2025-05-22 16:20:00", "https://picsum.photos/id/8/600/400"));
-        newsItems.add(new NewsItem("Next-generation smartphone features transparent OLED display and built-in hologram projector", "2025-05-23 12:35:00", "https://picsum.photos/id/9/600/400"));
-        newsItems.add(new NewsItem("Annual city marathon sees record turnout as over 15,000 runners participate despite heat", "2025-05-24 06:45:00", "https://picsum.photos/id/10/600/400"));
-
-        newsItems.add(new NewsItem("City marathon attracts record number of runners", "2025-05-24 06:45:00", "https://picsum.photos/200"));
-
+        newsItems.add(new NewsItem("Underwater archaeological team uncovers ancient city ruins near Mediterranean coast", "2025-05-25 09:10:00", "https://picsum.photos/id/11/600/400"));
+        newsItems.add(new NewsItem("Breakthrough battery tech charges electric vehicles in under five minutes", "2025-05-26 11:45:00", "https://picsum.photos/id/12/600/400"));
+        newsItems.add(new NewsItem("Local zoo welcomes rare panda cubs in successful international breeding program", "2025-05-27 14:30:00", "https://picsum.photos/id/13/600/400"));
+        newsItems.add(new NewsItem("Musical prodigy stuns audience with orchestral symphony written at age 11", "2025-05-28 19:20:00", "https://picsum.photos/id/14/600/400"));
+        newsItems.add(new NewsItem("Engineers develop solar road tiles to generate power from everyday traffic", "2025-05-29 08:05:00", "https://picsum.photos/id/15/600/400"));
+        newsItems.add(new NewsItem("Historic peace accord signed between long-feuding border nations", "2025-05-30 17:55:00", "https://picsum.photos/id/16/600/400"));
+        newsItems.add(new NewsItem("Futuristic wearable translates animal sounds into human speech in real time", "2025-05-31 13:15:00", "https://picsum.photos/id/17/600/400"));
+        newsItems.add(new NewsItem("Massive coral reef restoration project sees first signs of ecosystem recovery", "2025-06-01 07:30:00", "https://picsum.photos/id/18/600/400"));
+        newsItems.add(new NewsItem("Young inventor wins global award for eco-friendly water purification device", "2025-06-02 10:25:00", "https://picsum.photos/id/19/600/400"));
+        newsItems.add(new NewsItem("National space agency announces mission to establish lunar greenhouse by 2032", "2025-06-03 15:40:00", "https://picsum.photos/id/20/600/400"));
+        newsItems.add(new NewsItem("Community-run urban farm produces over 5 tons of fresh produce in first year", "2025-06-04 18:00:00", "https://picsum.photos/id/21/600/400"));
+        newsItems.add(new NewsItem("International art exhibit explores artificial intelligence as a creative partner", "2025-06-05 16:45:00", "https://picsum.photos/id/23/600/400"));
+        newsItems.add(new NewsItem("Renewable energy surpasses fossil fuels in global electricity generation", "2025-06-06 09:55:00", "https://picsum.photos/id/24/600/400"));
+        newsItems.add(new NewsItem("Wildlife corridors reduce animal-vehicle collisions by 75%, new data shows", "2025-06-07 12:15:00", "https://picsum.photos/id/25/600/400"));
+        newsItems.add(new NewsItem("Cutting-edge museum uses holograms and VR to bring history to life for visitors", "2025-06-08 20:40:00", "https://picsum.photos/id/26/600/400"));
 
         NewsAdapter newsAdapter = new NewsAdapter(newsItems, getContext());
 

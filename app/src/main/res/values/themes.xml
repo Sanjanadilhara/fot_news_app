@@ -4,9 +4,14 @@
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">#1A2A6C</item>
          <item name="colorOnPrimary">#FFFFFF</item>
-         <item name="colorSecondary">#1A2A6C</item>
-         <item name="colorOnSecondary">#FFFFFF</item>
-         <item name="color">#FFFFFF</item>
+         <item name="colorSecondary">#D0D7E7</item>
+         <item name="colorOnSecondary">#000000</item>
+         <item name="colorTertiary">#00000000</item>
+         <item name="colorOnTertiary">#AAAAAA</item>
+         <item name="backgroundColor">#FFFFFF</item>
+         <item name="colorOnBackground">#000000</item>
+         <item name="statusBarBackground">#FFFFFF</item>
+         <item name="android:statusBarColor">#000000</item>
     </style>
 
     <style name="Theme.NewsApp" parent="Base.Theme.NewsApp" />
