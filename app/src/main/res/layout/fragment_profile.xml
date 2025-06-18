@@ -26,12 +26,13 @@
         android:textSize="14sp"
         android:text="First Name"/>
     <TextView
+        android:id="@+id/profileFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="?attr/colorOnSecondary"
         android:textSize="18sp"
         android:layout_marginBottom="12dp"
-        android:text="Sanjana"/>
+        android:text="__"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,12 +41,13 @@
         android:textSize="14sp"
         android:text="Last Name"/>
     <TextView
+        android:id="@+id/profileLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="?attr/colorOnSecondary"
         android:textSize="18sp"
         android:layout_marginBottom="12dp"
-        android:text="Dilhara"/>
+        android:text="__"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,12 +56,13 @@
         android:textSize="14sp"
         android:text="Email"/>
     <TextView
+        android:id="@+id/profileEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18sp"
         android:layout_marginBottom="8dp"
         android:textColor="?attr/colorOnSecondary"
-        android:text="example@samplemail.com"/>
+        android:text="__"/>
 
     <LinearLayout
         android:layout_width="match_parent"
