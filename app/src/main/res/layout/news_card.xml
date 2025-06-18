@@ -41,7 +41,7 @@
         android:layout_height="25dp"
         android:src="@drawable/main_logo_small"
         android:scaleType="centerCrop"
-        android:background="#B7D3FD"
+        android:background="#44CCCCCC"
         app:shapeAppearanceOverlay="@style/CircleImage"/>
 
     <TextView
