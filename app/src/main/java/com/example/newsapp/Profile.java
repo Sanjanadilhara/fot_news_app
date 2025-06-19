@@ -59,9 +59,17 @@ public class Profile extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         Button signOutButton = (Button)view.findViewById(R.id.signOutButton);
+        Button editProfileButton = (Button)view.findViewById(R.id.editProfileButton);
         TextView firstNameTextView=(TextView)view.findViewById(R.id.profileFirstName);
         TextView lastNameTextView=(TextView)view.findViewById(R.id.profileLastName);
         TextView emailTextView=(TextView)view.findViewById(R.id.profileEmail);
+
+        editProfileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), EditProfile.class));
+            }
+        });
 
         signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
