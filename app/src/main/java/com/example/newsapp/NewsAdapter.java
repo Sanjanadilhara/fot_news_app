@@ -1,10 +1,12 @@
 package com.example.newsapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,17 +19,20 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     private ArrayList<NewsItem> localDataSet;
     private Context context;
+    private String dataPath;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView newsHeadline;
         private final ImageView newsImage;
         private final TextView newstime;
+        private final LinearLayout newsCard;
 
         public ViewHolder( View view) {
             super(view);
             newsHeadline = (TextView) view.findViewById(R.id.newsHeadline);
             newsImage = (ImageView) view.findViewById(R.id.newsImage);
             newstime = (TextView) view.findViewById(R.id.newsTime);
+            newsCard = (LinearLayout) view.findViewById(R.id.newsItemContainer);
         }
 
         public TextView getNewsHeadline() {
@@ -39,11 +44,13 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         public ImageView getNewsImage(){
             return newsImage;
         }
+        public LinearLayout getNewsCard(){return newsCard;}
     }
 
-    public NewsAdapter(ArrayList<NewsItem> dataSet, Context context) {
+    public NewsAdapter(ArrayList<NewsItem> dataSet, Context context, String dataPath) {
         localDataSet = dataSet;
         this.context = context;
+        this.dataPath=dataPath;
     }
 
     @Override
@@ -54,8 +61,18 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        viewHolder.getNewsHeadline().setText(localDataSet.get(position).headline);
-        Glide.with(context).load(localDataSet.get(position).imageUrl).into(viewHolder.getNewsImage());
+        final NewsItem item=localDataSet.get(position);
+        viewHolder.getNewsHeadline().setText(item.title);
+        Glide.with(context).load(item.image).into(viewHolder.getNewsImage());
+        viewHolder.getNewstime().setText(item.getTimeAgo());
+        viewHolder.getNewsCard().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, NewsView.class);
+                intent.putExtra("path", dataPath+"/"+item.id);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

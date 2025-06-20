@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -48,8 +49,6 @@ public class Profile extends Fragment {
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
-        userId = mAuth.getCurrentUser().getUid();
-        userRef = database.getReference("users").child(userId);
 
 
     }
@@ -74,11 +73,22 @@ public class Profile extends Fragment {
         signOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), LoginActivity.class));
+                new AlertDialog.Builder(getContext())
+                        .setTitle("Sign-out")
+                        .setMessage("Do you want to sign out")
+                        .setPositiveButton("yes", (dialog, which) -> {
+                            FirebaseAuth.getInstance().signOut();
+                            startActivity(new Intent(getContext(), LoginActivity.class));
+                        })
+                        .setNegativeButton("no", (dialog, which) -> dialog.dismiss())
+                        .show();
             }
         });
 
-        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        userId = mAuth.getCurrentUser().getUid();
+        userRef = database.getReference("users").child(userId);
+
+        userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);

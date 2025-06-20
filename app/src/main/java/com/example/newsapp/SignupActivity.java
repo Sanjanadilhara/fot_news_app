@@ -116,7 +116,6 @@ public class SignupActivity extends AppCompatActivity {
                                             .setPositiveButton("Ok", (dialog, which) -> {
                                                 signUpProgressOverlay.setVisibility(View.INVISIBLE);
                                             }).show();
-
                                 });
 
                     } else {
