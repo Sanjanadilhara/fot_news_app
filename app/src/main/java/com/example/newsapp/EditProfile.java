@@ -80,6 +80,13 @@ public class EditProfile extends AppCompatActivity {
             }
         });
 
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                deleteUser();
+            }
+        });
+
         setFields();
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,6 +156,70 @@ public class EditProfile extends AppCompatActivity {
                     .show();
         }
 
+    }
+    private void deleteUser(){
+        progressBar.setVisibility(View.VISIBLE);
+        if (mAuth.getCurrentUser() != null) {
+            EditText input = new EditText(this);
+            input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            ViewGroup.MarginLayoutParams params=new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.setMargins(20, 0, 20, 0);
+            input.setLayoutParams(params);
+
+            new AlertDialog.Builder(this)
+                    .setTitle("Re-authenticate")
+                    .setMessage("Enter your password to update email")
+                    .setView(input)
+                    .setPositiveButton("Confirm", (dialog, which) -> {
+                        String password = input.getText().toString();
+                        mAuth.getCurrentUser().reauthenticate(EmailAuthProvider.getCredential(mAuth.getCurrentUser().getEmail(), password)).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> taskm) {
+                                if(taskm.isSuccessful()){
+                                    mAuth.getCurrentUser().delete()
+                                            .addOnCompleteListener(task -> {
+                                                if (task.isSuccessful()) {
+                                                    deleteUserInfo();
+                                                } else {
+                                                    new AlertDialog.Builder(EditProfile.this)
+                                                            .setTitle("Failed")
+                                                            .setMessage(task.getException().getMessage().toString())
+                                                            .setPositiveButton("Ok", (dialog, which) -> {
+                                                                progressBar.setVisibility(View.INVISIBLE);
+                                                            }).show();
+                                                }
+                                            });
+                                }
+                            }
+                        });
+
+                        dialog.dismiss();
+                    })
+                    .setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss())
+                    .show();
+        }
+
+    }
+    private void deleteUserInfo(){
+        userRef.removeValue()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        new AlertDialog.Builder(EditProfile.this)
+                                .setTitle("Success")
+                                .setMessage("Successfully deleted the profile")
+                                .setPositiveButton("Ok", (dialog, which) -> {
+                                    progressBar.setVisibility(View.INVISIBLE);
+                                    finish();
+                                }).show();
+                    } else {
+                        new AlertDialog.Builder(EditProfile.this)
+                                .setTitle("Failed")
+                                .setMessage("Failed to delete user")
+                                .setPositiveButton("Ok", (dialog, which) -> {
+                                    progressBar.setVisibility(View.INVISIBLE);
+                                }).show();
+                    }
+                });
     }
     private void saveOtherInfo(String firstName, String lastName){
 
